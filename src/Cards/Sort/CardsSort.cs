@@ -10,6 +10,9 @@ namespace Cards.Sort
     {
         public List<Card> Sort(List<Card> cards)
         {
+            if (cards == null)
+                throw new ArgumentNullException();
+
             int i = 0;
             int j = 1;
             int nextCardIndex = j;           

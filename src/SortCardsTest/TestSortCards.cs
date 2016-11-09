@@ -65,5 +65,17 @@ namespace SortCardsTest
             CollectionAssert.AreNotEqual(cards, sortedCards);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Test3()
+        {
+            // arrange
+            List<Card> cards = null;
+
+            // act
+            CardsSort sort = new CardsSort();
+            cards = sort.Sort(cards);
+        }
+
     }
 }

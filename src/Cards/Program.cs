@@ -11,15 +11,23 @@ namespace Cards
     {
         static void Main(string[] args)
         {
-            List<Card> cards = new List<Card>()
+            try
             {
-                new Card() { DeparturePoint = "Мельбурн", DestinationPoint = "Кельн" },
-                new Card() { DeparturePoint = "Москва", DestinationPoint = "Париж" },
-                new Card() { DeparturePoint = "Кельн", DestinationPoint = "Москва" },
+                List<Card> cards = new List<Card>()
+                {
+                    new Card() { DeparturePoint = "Мельбурн", DestinationPoint = "Кельн" },
+                    new Card() { DeparturePoint = "Москва", DestinationPoint = "Париж" },
+                    new Card() { DeparturePoint = "Кельн", DestinationPoint = "Москва" },
 
-            };
-            CardsSort sort = new CardsSort();
-            cards = sort.Sort(cards);           
+                };
+                CardsSort sort = new CardsSort();
+                cards = sort.Sort(cards);
+                Console.ReadLine();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
         }
     }
 }

@@ -10,7 +10,9 @@ namespace Cards.Sort
     {
         public List<Card> Sort(List<Card> cards)
         {
-            int i = 0, j = 1, previousJ = j;           
+            int i = 0;
+            int j = 1;
+            int nextCardIndex = j;           
             while (i < cards.Count - 1)
             {
                 bool nextCardNotFound = true;                            
@@ -22,14 +24,14 @@ namespace Cards.Sort
                         cards[i + 1] = cards[j];
                         cards[j] = tmpCard;
                         nextCardNotFound = false;
-                        previousJ = j;
+                        nextCardIndex = j;
                     }
                     ++j;
                 }
                 if (nextCardNotFound && j != i + 1)
                 {
                     --i;
-                    j = previousJ + 1;
+                    j = nextCardIndex + 1;
                 }
                 else
                 {
